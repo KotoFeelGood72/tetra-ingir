@@ -1,0 +1,50 @@
+extends _layout
+
+block vars
+	- array = {body_class:'mod_blue', layout_mod:'', sub_keywords:'', title_inner:'ТЕТРАИНЖИНИРИНГ - Подбор, монтаж и ввод оборудования в эксплуатацию'}
+block content_block
+	+breadcrumb(['Главная'], 'Подбор, монтаж и ввод в эксплуатацию Б/У оборудования или комплексных линий для розлива продуктов в упаковку Тетра Пак')
+	section.article 
+		.section_in 
+			.article_main
+				.article_content.global_txt 
+					p Lorem ipsum dolor sit amet consectetur. Aliquam feugiat etiam egestas cursus pharetra at. Rhoncus ullamcorper porta purus ut hendrerit urna. Neque ullamcorper id eget neque. Justo aliquam semper egestas et in sed elementum. Amet non id duis lectus in consectetur nisl vitae purus. Porta velit mauris amet nunc nullam nullam duis. Viverra ut consequat viverra lobortis quisque justo egestas vulputate congue. Erat ac iaculis etiam hac non ridiculus viverra fames curabitur. Tincidunt sapien ut consequat volutpat tellus luctus aliquam quisque.
+					ul 
+						li
+							strong Lorem ipsum dolor sit amet consectetur:
+						li
+							strong Aliquam feugiat etiam egestas cursus pharetra at.
+						li
+							strong Rhoncus ullamcorper porta purus ut hendrerit urna.
+						li
+							strong Neque ullamcorper id eget neque. Justo aliquam semper egestas et in sed elementum.
+					ul.single_img 
+						-for(i = 0; i < 3; i++)
+							li.block_itemImg 
+								a(href=`i/single_${i}.jpg` data-fancybox)
+									img(src=`i/single_${i}.jpg`, alt="")
+					p Lorem ipsum dolor sit amet consectetur. Aliquam feugiat etiam egestas cursus pharetra at. Rhoncus ullamcorper porta purus ut hendrerit urna. Neque ullamcorper id eget neque. Justo aliquam semper egestas et in sed elementum. Amet non id duis lectus in consectetur nisl vitae purus. Porta velit mauris amet nunc nullam nullam duis. Viverra ut consequat viverra lobortis quisque justo egestas vulputate congue. Erat ac iaculis etiam hac non ridiculus viverra fames curabitur. Tincidunt sapien ut consequat volutpat tellus luctus aliquam quisque.Lorem ipsum dolor sit amet consectetur. Aliquam feugiat etiam egestas cursus pharetra at. Rhoncus ullamcorper porta purus ut hendrerit urna. Neque ullamcorper id eget neque. Justo aliquam semper egestas et in sed elementum. Amet non id duis lectus in consectetur nisl vitae purus. Porta velit mauris amet nunc nullam nullam duis. Viverra ut consequat viverra lobortis quisque justo egestas vulputate congue. Erat ac iaculis etiam hac non ridiculus viverra fames curabitur. Tincidunt sapien ut consequat volutpat tellus luctus aliquam quisque.
+				.article_form_w
+					h4!='Услуга вас заинтересовала?</br> Оставьте заявку, наши менеджеры свяжутся с вами'
+					form.acticle_form(action="#")
+						.article_form_head
+							.article_form_group
+								+input({
+									place: 'Имя',
+									var: 'arcticle'
+								})
+								+input({
+									place: 'Ваш номер телефона',
+									var: 'arcticle',
+									type: 'tel'
+								})
+							+input({
+								val: 'Отправить',
+								submit: true,
+								var: 'article'
+							})
+						.article_form_policy!='Отправляя форму вы соглашаетесь на обработку своих персональных данных и принимаете <a href="#">Политику Конфиденциальности</a>'
+	+contacts({
+		title: true,
+		mode: 'grey'
+	})

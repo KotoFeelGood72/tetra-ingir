@@ -1,0 +1,29 @@
+footer.footer 
+	.section_in 
+		.footer_main
+			.footer_col_left 
+				.header_logo_w
+					a(href="#")
+						.header_logo
+							img(src="i/logo.png", alt="")
+						p ТЕТРАИНЖИНИРИНГ
+				.footer_colRight_info 
+					p Copyright © 2022 Все права защищены
+					a(href="#") Политика конфиденциальности
+					.arkada_link 
+						a(href="#")
+							img(src="i/arkada.svg", alt="")
+			.footer_col_nav 
+				nav.footer_nav 
+					ul.footer_nav_list 
+						each item, i in ['Услуги', 'Оборудование', 'Галерея', 'Контакты']
+							if i === 0
+								li 
+									a(href="#")=item
+									ul.footer_nav_sublist 	
+										each item in ['Подбор, монтаж и ввод оборудования в эксплуатацию', 'Перенос оборудования', 'Восстановление оборудования', 'Плановый и аварийный ремонт']
+											li 
+												a(href="#")=item  
+							else 
+								li 
+									a(href="#")=item  

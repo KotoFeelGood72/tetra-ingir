@@ -1,0 +1,109 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'ТЕТРАИНЖИНИРИНГ - Главная'}
+block content_block
+	section.hero 
+		.section_in 
+			.hero_main 
+				h1!='Наша цель — </br>Решение ваших проблем'
+				.hero_list_w 
+					p Сотрудничая с нами вы получаете:
+					ul 
+						each item in ['Оптимальное качество', 'Оперативность', 'Анализ и решение проблем']
+							li=item 
+				+btn({
+					name: 'Заказать звонок',
+					class: 'hero_btn trigger',
+					target: 'forms',
+					link: true,
+				})
+	.heroService 
+		.section_in
+			ul.heroService_list
+				-for(i = 0; i < 4; i++)
+					- let title = ['ПОДБОР ОБОРУДОВАНИЯ', 'ПОМОЩЬ ПРИ ПЕРЕНОСЕ', 'ВОССТАНОВЛЕНИЕ ОБОРУДОВАНИЯ', 'РЕМОНТ']
+					- let txt = ['Подберем б/у оборудование или комплексные линии для розлива продуктов в упаковку Тетра Пак. Осуществим монтаж и ввод в эксплуатацию.', 'Окажем помощь при переносе оборудования. Мы готовы предложить как полный переезд линии/оборудования под ключ, так и приступить на любом этапе работы.', 'Готовы помочь с восстановление б/у оборудования Тетра Пак.', 'Осуществим плановый и аварийный ремонт линий розлива Тетра Пак.']
+					li.heroService_item
+						.heroService_item_head
+							.heroService_item_img
+								img(src=`i/service_${i}.svg`, alt="")
+							.heroService_item_content 
+								p=title[i]
+								span=txt[i]
+						.heroService_item_link 
+							a(href="#") 
+								p Перейти
+								.item_link_icon
+									+icon('arr-small-right')
+	section.edge 
+		.section_in 
+			.edge_main 
+				.section_title 
+					h2 Преимущества
+				ul.edge_list 
+					-for(i = 0; i < 3; i++)
+						- let titleEdge = ['Продажа продукции только напрямую, минуя цепь посредников', 'Строгий контроль качества', 'Доступный ценовой диапазон']
+							li.edge_item_w 
+								.edge_item
+									.edge_item_img 
+										img(src=`i/edge_${i}.jpg`, alt="")
+									.edge_item_title 
+										p=titleEdge[i]
+	section.app
+		.section_in 
+			.app_main 
+				.app_form_w 
+					h3 Оставьте ваши контакты и мы свяжемся с вами:
+					form.app_form(action="")
+						+input({
+							place: 'Ваш номер телефона',
+							type: 'tel',
+							var: 'app'
+						})
+						+input({
+							place: 'ФИО',
+							var: 'app'
+						}) 
+						+input({
+							place: 'Компания, где вы работаете',
+							var: 'app'
+						}) 
+						+input({
+							place: 'Ваша должность',
+							var: 'app'
+						})
+						.app_policy!='Отправляя форму вы соглашаетесь на обработку своих персональных данных и принимаете <a href="/" target="_blank">Политику Конфиденциальности</a>'
+						+input({
+							val: 'Отправить',
+							submit: true,
+							var: 'btn'
+						})
+				.app_img 
+					img(src="i/app.jpg", alt="")
+	section.photos 
+		.section_in 
+			.photos_main
+				.section_title 
+					h4  Галерея
+				ul.photos_list
+					li.photos_item 
+						a(href="i/photos_0.jpg" data-fancybox)
+							img(src=`i/photos_0.jpg`, alt="")
+					li.photos_item 
+						a(href="i/photos_1.jpg" data-fancybox)
+							img(src=`i/photos_1.jpg`, alt="")
+					li.photos_item 
+						a(href="i/photos_2.jpg" data-fancybox)
+							img(src=`i/photos_2.jpg`, alt="")
+					li.photos_more 
+						a(href="#")
+							p Смотреть больше
+							.photos_more_icon 
+								+icon('arr-right')
+	+contacts({
+		title: true,
+		mode: 'grey'
+	})
+								
+

@@ -1,0 +1,128 @@
+.article {
+}
+.section_in {
+}
+.article_main {
+}
+.article_content {
+	margin-bottom: 10rem;
+	@include bp($point_2) {
+		margin-bottom: 7rem;
+	}
+}
+.global_txt {
+}
+.single_img {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+	grid-gap: 3rem;
+	height: 28rem;
+	margin: 7rem 0!important;
+	@include bp($point_2) {
+		max-height: 23rem;
+		grid-gap: 1rem;
+		margin: 4rem 0!important;
+	}
+	@include bp($point_4) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		max-height: 100%;
+		height: auto;
+	}
+	li {
+		margin-bottom: 0!important;
+		padding-left: 0!important;
+		&:before {
+			display: none;
+		}
+	}
+	img {
+		height: 100%;
+		object-fit: cover;
+		@include bp($point_4) {
+			height: auto;
+		}
+	}
+}
+.block_itemImg {
+}
+.article_form_w {
+	background-color: $l-blue;
+	margin-bottom: 10rem;
+	padding: 10rem 12.3rem;
+	@include bp($point_4) {
+		padding: 4rem 2rem;
+	}
+
+	h4 {
+		font-size: 2.4rem;
+		font-family: $font_2;
+		font-weight: 700;
+		margin-bottom: 5rem;
+		@include bp($point_4) {
+			font-size: 2rem;
+		}
+	}
+
+	* {
+		color: $white;
+	}
+}
+.acticle_form {
+}
+.article_form_head {
+	@include flex-start;
+	align-items: flex-end;
+	margin-bottom: 3rem;
+	// height: 6rem;
+	@include bp($point_2) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+.article_form_group {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(47%, 1fr));
+	grid-gap: 5rem;
+	max-width: 94.6rem;
+	margin-right: 4.9rem;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		max-width: 100%;
+		margin: 0 0 3rem 0;
+
+	}
+	@include bp($point_4) {
+		grid-gap: 3rem;
+	}
+}
+.global_input {
+}
+
+.arcticle_input {
+	margin-bottom: 0!important;
+	display: block
+}
+#article_submit {
+	@include flex-center;
+	width: auto;
+	display: inline-flex;
+	background-color: $white;
+	color: $l-blue;
+	text-transform: uppercase;
+	font-family: $font_2;
+	font-weight: 700;
+	padding: 2rem 4.8rem;
+	border-radius: 3rem;
+	border: none;
+	cursor: pointer;
+	@include bp($point_4) {
+		font-size: 1.4rem;
+		padding: 1.5rem 4rem;
+	}
+}
+.undefined_input {
+}
+.article_form_policy {
+	font-size: 1.4rem;
+	opacity: .5;
+}

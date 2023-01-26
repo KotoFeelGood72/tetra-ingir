@@ -1,0 +1,30 @@
+extends _layout
+
+block vars
+	- array = {body_class:'mod_blue', layout_mod:'', sub_keywords:'', title_inner:'ТЕТРАИНЖИНИРИНГ - Услуги'}
+block content_block
+	+breadcrumb(['Главная'], 'Оборудование')
+	section.services
+		.section_in 
+			.services_main
+				ul.services_list
+					-for(i = 0; i < 6; i++)
+						- let title = ['Стерилизатор трубчатый для жидких пищевых продуктов Тетра Пак Base Drink 5000', 'СИП мойка SCU4', 'Упаковщик TCBP 70 Med Infeed', 'Автомат розлива ТВА3-540V', 'Разные повороты конвейера Тетра Пак, б/у', 'ВЧ генератор Тетра Пак TPIH-2000']
+						li.services_item 
+							a(href="#" class="trigger" data-target="service")  
+								.services_item_img
+										img(src=`i/services_${i}.jpg`, alt="")
+								.services_item_content 
+									h3=title[i]
+									.services_item_link.btn
+										p Подробнее
+										.services_item_icon 
+											+icon('arr-big-right')
+				+pagination({
+					pages:5,
+				})
+	+contacts({
+		title: true,
+		mode: 'grey'
+	})
+	

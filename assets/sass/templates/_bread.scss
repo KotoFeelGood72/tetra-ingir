@@ -1,0 +1,48 @@
+.breadcrumb {
+	padding: 10rem 0 7rem 0;
+	@include bp($point_2) {
+		padding: 4rem 0;
+	}
+
+	h1 {
+		max-width: 129.3rem;
+		@include bp($point_2) {
+			padding: 1.5rem 0;
+		}
+	}
+}
+.breadcrumb__list {
+	margin-bottom: 3rem;
+	@include flex-start;
+	flex-wrap: wrap;
+	@include bp($point_2) {
+		margin-bottom: 2rem;
+		display: inline;
+	}
+	li {
+		font-size: 1.4rem;
+		color: $l-blue;
+		position: relative;
+		@include bp($point_2) {
+			display: inline;
+		}
+		&:not(:last-child) {
+			padding-right: 1rem;
+			margin-right: 1.2rem;
+			&:after {
+				position: absolute;
+				top: 52%;
+				transform: translateY(-50%);
+				left: 100%;
+				content: '';
+				width: .5rem;
+				height: .8rem;
+				background: url('../../i/bread.svg') center/cover no-repeat;
+			}
+		}
+		a {
+			color: $dark;
+		}
+	}
+}
+

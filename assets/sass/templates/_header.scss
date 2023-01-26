@@ -1,0 +1,171 @@
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: $header;
+	width: 100%;
+	will-change: transform;
+	@include z-index(header);
+	@include flex-center;
+	@include bp($point_2) {
+		height: $header_mob;
+	}
+	* {
+		color: $white
+	}
+}
+
+.header {
+}
+.section_in {
+}
+.header_main {
+	@include flex-space;
+}
+
+
+
+.header_logo_w {
+	a {
+		@include flex-start;
+		transition: all .3s ease;
+		&:hover {
+			opacity: .7;
+		}
+		p {
+			font-size: 2.4rem;
+			font-family: $font_2;
+			text-transform: uppercase;
+			font-weight: 700;
+			@include bp($point_4) {
+				font-size: 1.8rem;
+			}
+		}
+	}
+}
+.header_logo {
+	margin-right: 1.2rem;
+	width: 5rem;
+	@include flex-center;
+}
+.header_nav {
+}
+.header_nav_list {
+	@include flex-start;
+	@include bp($point_2) {
+		display: none;
+	}
+
+	&>li {
+		position: relative;
+		margin-right: 4rem;
+		padding-right: 2rem;
+		padding: 4.5rem 2rem 4.5rem 0;
+		&:hover {
+			& ul {
+				opacity: 1;
+				visibility: visible;
+			}
+			&>a {
+				background-color: $n-blue;
+				&:after {
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+		}
+		&.current {
+			a {
+				background-color: $n-blue;
+			}
+		}
+		&>a {
+			font-size: 1.6rem;
+			font-family: $font_2;
+			font-weight: 700;
+			padding: 1rem 2rem;
+			transition: all .3s ease;
+		}
+		&:not(:last-child) {
+			&>a {
+				position: relative;
+				&:after {
+					position: absolute;
+					right: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					content: '';
+					background-color: $l-blue;
+					width: .2rem;
+					height: 2.6rem;
+				}
+			}
+		}
+	}
+}
+.header_nav_sublist {
+	position: absolute;
+	top: 100%;
+	min-width: 29.7rem;
+	background-color: $white;
+	padding: 3rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .3s ease;
+	box-shadow: 0 0 .4rem rgba(0, 0, 0, 0.25);
+	li {
+		&:hover, &.current {
+			a {
+				color: $l-blue;
+			}
+		}
+		a {
+			color: $dark;
+		}
+		&:not(:last-child) {
+			margin-bottom: 2.4rem;
+		}
+	}
+}
+
+.header_nav_toggle {
+	display: none;
+	@include bp($point_2) {
+		@include flex-center;
+		width: 3rem;
+		height: 2.5rem;
+		position: relative;
+	}
+
+	&:before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 5rem;
+		height: 4.5rem;
+		content: '';
+		background-color: $white;
+		border-radius: 0.5rem;
+	}
+
+	span {
+		position: absolute;
+		top: 0;
+		right: 0;
+		border-bottom: .4rem solid $l-blue;
+		width: 100%;
+		border-radius: 5rem;
+
+		&:nth-child(2) {
+			top: 50%;
+			transform: translateY(-50%);
+			width: 70%;
+		}
+		&:nth-child(3) {
+			top: auto;
+			bottom: 0;
+			width: 50%;
+		}
+	}
+}

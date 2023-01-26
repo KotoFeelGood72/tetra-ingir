@@ -1,0 +1,21 @@
+.widget_list {
+	padding: 0 1rem;
+	li {
+		padding: 0!important;
+		margin-bottom: 1rem;
+		border-bottom: .1rem solid rgba(255, 255, 255, 0.233);
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	a {
+		text-transform: uppercase!important;
+		font-family: $font_1!important;
+		text-decoration: none!important;
+		transition: all .3s ease;
+		&:hover {
+			// opacity: .8;
+			color: #C91313;
+		}
+	}
+}

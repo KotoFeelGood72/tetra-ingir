@@ -1,0 +1,67 @@
+// Btn
+mixin btn(data)
+	.btn(class=data.class data-target=data.target)
+		if data.link
+			a(href="#")=data.name
+		else 
+			button(type=data.type ? data.type : type="button")=data.name
+
+// End
+
+// Input
+mixin input(data)
+	.global_input(class=`${data.var}_input`)
+		if data.submit
+			input(type="submit" value=data.val id=`${data.var}_submit`)
+		else 
+			input(type=data.type ? data.type : type="text" placeholder=data.place id=`${data.var}_${data.type}`)
+
+// End
+
+// Block contacts
+mixin contacts(data)
+	section.globalContacts(class=data.mode) 
+		.section_in 
+			.globalContacts_main
+				.globalContacts_info
+					if data.title
+						h6 Контакты:
+					else 
+						
+					ul.contacts_info
+						-
+							let info = [
+								{
+									title: 'Краснодарский край, ст. Северская',
+									icon: 'map'
+								},
+								{
+									link: ['+7 918 442-45-19', '+7 928 282-64-55'],
+									icon: 'tel'
+								},
+								{
+									link: ['alex_1510@inbox.ru', 'tetra.inginiring@gmail.com'],
+									icon: 'mail'
+								},
+							]
+						each item in info 
+							li.contact_item 
+								.contact_item_icon 
+									+icon(item.icon)
+								if item.title
+									.contact_item_title
+										p=item.title 
+								else if item.link
+									ul 
+										each items in item.link
+											li
+												a(href="#")=items
+					ul.contacts_social 
+						each item in ['facebook', 'twitter', 'instagram']
+							li 
+								a(href="#")
+									+icon(item)
+				.contacts_map 
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6ae0b04ecd22495dbdc1a097c5dc1f1aa0596e624b87a429d7200fcfde571b9f&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
+
+// End

@@ -1,0 +1,78 @@
+// Global 
+$header: 11rem;
+$footer: 32.7rem;
+
+// Mobile
+$header_mob: 9rem;
+$footer_mob: 10rem;
+
+//---------------------------------------------fonts
+$font_path: "../fonts/";
+$font_1: 'Muller-Regular', sans-serif;
+$font_2: 'Muller-Bold', sans-serif;
+
+$font_size_base: 1.6rem;
+//---------------------------------------------fonts###
+
+//---------------------------------------------colors
+$white: #fff;
+$black: #000;
+$dark: #2D2D2D;
+$trans: transparent;
+
+$n-blue: #0C0959;
+$d-blue: #154095;
+$l-blue: #3765DC;
+
+
+$n-gray: #83848C;
+$d-gray: #F2F3F8;
+$l-gray: #E5E7EF;
+
+
+
+$color_text_base: $dark;
+$color_link_base: $dark;
+$body_bg: $white;
+//---------------------------------------------colors###
+
+//---------------------------------------------z-index
+$z-index: (
+	popup : 101,
+	header : 100,
+	footer : 100,
+	el: -1,
+
+);
+//---------------------------------------------z-index###
+
+//---------------------------------------------layout
+$page_width: 144rem;
+
+//---------------------------------------------layout###
+
+//---------------------------------------------global values
+$gl_radius: 2.4rem;
+//---------------------------------------------global values###
+
+//---------------------------------------------media points
+$point_1: 1200px;
+$point_2: 1024px;
+$point_3: 1023px;
+$point_4: 768px;
+$point_5: 640px;
+$point_6: 480px;
+$point_7: 375px;
+$point_8: 320px;
+//---------------------------------------------media points
+
+//---------------------------------------------forms
+
+$input_font_size: $font_size_base;
+$input_border_color: #ccc;
+$input_border_color_active: $dark;
+$input_placeholder_color: $white;
+$input_placeholder_opacity: .7;
+$input_text_color: $dark;
+
+//---------------------------------------------forms###

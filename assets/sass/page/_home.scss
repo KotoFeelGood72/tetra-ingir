@@ -1,0 +1,561 @@
+.hero {
+	position: relative;
+	* {
+		color: $white;
+	}
+	&:before {
+		position: absolute;
+		top: -$header;
+		left: 0;
+		width: 100%;
+		height: calc(100% + $header);
+		content: '';
+		background: url('../../i/hero_bg.jpg') center/cover no-repeat;
+		@include z-index(el);
+	}
+}
+.section_in {
+}
+.hero_main {
+	padding: 10.1rem 0 27.3rem 0;
+	margin-bottom: -10rem;
+	@include bp($point_4) {
+		padding: 7rem 0 20rem 0;
+	}
+
+	h1 {
+		max-width: 55.7rem;
+		text-transform: uppercase;
+	}
+}
+.hero_list_w {
+	margin: 5rem 0;
+	@include bp($point_2) {
+		margin: 3.5rem 0;
+	}
+	p {
+		font-family: $font_2;
+		font-weight: 700;
+		margin-bottom: 2.4rem;
+	}
+
+	ul {
+		li {
+			font-family: $font_2;
+			font-weight: 700;
+			position: relative;
+			padding-left: 1.5rem;
+			&:before {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 0;
+				width: .5rem;
+				height: .5rem;
+				border-radius: 100%;
+				background-color: $white;
+				content: '';
+			}
+			&:not(:last-child) {
+				margin-bottom: 0.6rem;
+			}
+		}
+	}
+}
+.btn {
+}
+.hero_btn {
+}
+.trigger {
+}
+.heroService {
+	margin-bottom: 17rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+}
+.heroService_list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(24%, 1fr));
+	box-shadow: 0 .6rem 6rem 1rem rgba(0, 0, 0, 0.1);
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+	}
+	@include bp($point_4) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
+}
+.heroService_item {
+	text-align: center;
+	min-height: 34.4rem;
+	@include flex-space;
+	flex-direction: column;
+	padding: 5rem 6rem 6.8rem 6rem;
+	position: relative;
+	cursor: pointer;
+	transition: all .3s ease;
+	background-color: $white;
+	@include bp($point_2) {
+		background-color: $l-blue;
+		padding-bottom: 4rem;
+	}
+	@include bp($point_4) {
+		padding: 2rem;
+		min-height: 100%;
+	}
+	.heroService_item_content {
+		p, span {
+			@include bp($point_2) {
+				color: $white;
+			}
+		}
+	}
+	&:hover {
+		padding-bottom: 10.8rem;
+		background-color: $l-blue;
+		@include bp($point_2) {
+			padding-bottom: 4rem;
+		}
+		.heroService_item_content {
+			p, span {
+				color: $white;
+			}
+		}
+		&:after {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.heroService_item_link {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&:not(:last-child) {
+		&:after {
+			content: '';
+			width: .3rem;
+			height: 6rem;
+			background-color: $d-gray;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 0;
+			transition: all .3s ease;
+			@include bp($point_2) {
+				display: none;
+			}
+		}
+	}
+}
+.heroService_item_img {
+	width: 8rem;
+	@include flex-center;
+	margin: 0 auto;
+	@include bp($point_4) {
+		width: 6rem;
+	}
+}
+
+
+.heroService_item_content {
+	@include bp($point_2) {
+		margin-bottom: 2rem;
+	}
+	p {
+		font-family: $font_2;
+		font-weight: 700;
+		color: $l-blue;
+		margin: 2.6rem 0 1rem 0;
+	}
+
+	span {
+		font-size: 1.4rem;
+		color: $n-gray;
+	}
+}
+.heroService_item_link {
+	position: absolute;
+	bottom: 5rem;
+	transition: all .3s ease;
+	opacity: 0;
+	visibility: hidden;
+	@include bp($point_2) {
+		position: static;
+		opacity: 1;
+		visibility: visible;
+	}
+	&:hover {
+		opacity: .7;
+	}
+	a {
+		@include flex-center;
+		color: $l-blue;
+		font-size: 1.4rem;
+		background-color: $white;
+		border-radius: 10rem;
+		padding: 1rem 4rem;
+		p {
+			margin-right: 0.5rem;
+		}
+	}
+}
+.item_link_icon {
+}
+.icon-arr-small-right {
+}
+.icon-service_1 {
+}
+.icon-service_2 {
+}
+.icon-service_3 {
+}
+.edge {
+}
+.edge_main {
+	margin-bottom: 14rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+}
+.section_title {
+	margin-bottom: 7rem;
+	@include bp($point_4) {
+		margin-bottom: 5rem;
+	}
+	h2, h3, h4, h5, h6 {
+		font-size: 3.6rem;
+		font-family: $font_2;
+		font-weight: 700;
+		color: $d-blue;
+		@include bp($point_4) {
+			font-size: 2.6rem;
+		}
+	}
+}
+.edge_list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(21.4rem, 1fr));
+	grid-gap: 19rem;
+	font-family: $font_2;
+	font-weight: 700;
+	color: $l-blue;
+	justify-items : start;
+	max-width: 104rem;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+		grid-gap: 3rem;
+		justify-items: center;
+	}
+	@include bp($point_4) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		max-width: 30rem;
+		margin: 0 auto;
+	}
+
+}
+.edge_item_w {
+}
+.edge_item {
+	max-width: 21.4rem;
+	@include bp($point_2) {
+		max-width: 100%;
+		@include flex-center;
+		flex-direction: column;
+		text-align: center;
+	}
+}
+.edge_item_img {
+	width: 6rem;
+	@include flex-center;
+	margin-bottom: 3rem;
+}
+.edge_item_title {
+}
+.app {
+	background-color: $l-blue;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 14rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+
+	* {
+		color: $white;
+	}
+}
+.app_main {
+	@include flex-start;
+	@include bp($point_2) {
+		flex-direction: column;
+		padding: 5rem 0;
+	}
+}
+.app_form_w {
+	padding: 10rem 0 10rem 0;
+	width: 100%;
+	margin-bottom: 5rem;
+	@include bp($point_2) {
+		order: 1;
+		padding: 0;
+	}
+
+	h3 {
+		font-size: 2.4rem;
+		max-width: 32.4rem;
+		margin-bottom: 5rem;
+		font-family: $font_2;
+		font-weight: 700;
+	}
+}
+.app_form {
+	max-width: 46rem;
+	@include bp($point_2) {
+		max-width: 100%;
+	}
+}
+.global_input {
+}
+.app_input {
+}
+.app_policy {
+	margin-top: -1rem;
+	max-width: 33.3rem;
+	opacity: .5;
+	font-size: 1.4rem;
+	margin-bottom: 5rem;
+}
+.undefined_input {
+}
+.app_img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 81rem;
+	width: 97.5rem;
+	@include bp($point_2) {
+		position: static;
+		order: 0;
+		width: 100%;
+		height: auto;
+		margin-bottom: 5rem;
+	}
+	img {
+		object-fit: cover;
+		height: 100%;
+		@include bp($point_2) {
+			height: auto;
+		}
+	}
+}
+.photos {
+}
+.photos_main {
+	margin-bottom: 14rem;
+	@include bp($point_2) {
+		margin-bottom: 10rem;
+	}
+}
+.photos_list {
+	display: grid;
+	grid-template-areas: "a a b b b b"
+											 "a a	c d d d";
+	grid-gap: 3rem;
+	height: 55rem;
+	@include bp($point_2) {
+		grid-gap: 1rem;
+		grid-template-areas: "a a a b b b"
+											 	 "a a	a c c d";
+		height: auto;
+	}
+
+	@include bp($point_4) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	img {
+		height: 100%;
+		object-fit: cover;
+		@include bp($point_4) {
+			height: auto;
+		}
+	}
+
+	li {
+		&:nth-child(1) {
+			grid-area: a;
+		}
+		&:nth-child(2) {
+			grid-area: b;
+		}
+		&:nth-child(3) {
+			grid-area: c;
+			max-width: 41.5rem;
+			@include bp($point_4) {
+				max-width: 100%;
+			}
+		}
+		&:nth-child(4) {
+			grid-area: d;
+			width: 26rem;
+			height: 26rem;
+			background-color: $l-blue;
+			text-align: center;
+			transition: all .3s ease;
+			@include bp($point_2) {
+				max-height: 100%;
+				max-width: 100%;
+				height: 100%;
+				width: 100%;
+			}
+			&:hover {
+				background-color: $l-gray;
+				a {
+					color: $l-blue;
+				}
+			}
+			a {
+				@include flex-center;
+				flex-direction: column;
+				width: 100%;
+				height: 100%;
+				transition: all .3s ease;
+				color: $white;
+				@include bp($point_4) {
+					flex-direction: row;
+					height: auto;
+					padding: 2rem;
+				}
+			}
+			p {
+				text-transform: uppercase;
+				font-family: $font_2;
+				font-weight: 700;
+				margin-bottom: 1.4rem;
+				max-width: 9.3rem;
+				@include bp($point_4) {
+					max-width: 100%;
+					margin: 0 2rem 0 0;
+				}
+			}
+		}
+	}
+}
+.photos_item {
+}
+.globalContacts {
+	background-color: $d-gray;
+}
+.globalContacts_main {
+	@include flex-start;
+	min-height: 47.6rem;
+	@include bp($point_2) {
+		justify-content: space-between;
+		min-height: 40rem;
+	}
+	@include bp($point_4) {
+		flex-direction: column;
+		padding: 7rem 0;
+	}
+}
+.globalContacts_info {
+	@include bp($point_2) {
+		margin-right: 4rem;
+	}
+
+	@include bp($point_4) {
+		margin: 0 0 3rem 0;
+	}
+
+	h6 {
+		margin-bottom: 5rem;
+		color: $d-blue;
+		font-weight: 700;
+		font-size: 2.4rem;
+		@include bp($point_2) {
+			font-size: 2.2rem;
+		}
+	}
+}
+.contacts_info {
+	margin-bottom: 5rem;
+	@include bp($point_2) {
+		margin-bottom: 3.5rem;
+	}
+}
+.contact_item {
+	@include flex-start;
+	align-items: flex-start;
+	color: $n-gray;
+	a {
+		color: inherit;
+		transition: all .3s ease;
+		&:hover {
+			color: $l-blue;
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+}
+.contact_item_icon {
+	margin-right: 1rem;
+}
+.icon-map {
+}
+.contact_item_title {
+}
+.icon-tel {
+}
+.icon-mail {
+}
+.contacts_social {
+	@include flex-start;
+	li {
+		&:not(:last-child) {
+			margin-right: 1.2rem;
+		}
+		width: 3.6rem;
+		height: 3.6rem;
+		@include bp($point_2) {
+			width: 3rem;
+			height: 3rem;
+		}
+		a  {
+			@include flex-center;
+			width: 100%;
+			height: 100%;
+			color: $n-gray;
+			transition: all .3s ease;
+			&:hover {
+				color: $l-blue;
+			}
+		}
+	}
+}
+.icon-facebook {
+}
+.icon-twitter {
+}
+.icon-instagram {
+}
+.contacts_map {
+	width: 100%;
+	height: 47.6rem;
+	position: absolute;
+	right: 0;
+	max-width: 97.5rem;
+	@include bp($point_2) {
+		position: static;
+		max-width: 50%;
+		max-height: 40rem;
+	}
+	@include bp($point_4) {
+		max-width: 100%;
+		max-height: 28rem;
+	}
+}

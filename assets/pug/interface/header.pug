@@ -1,0 +1,25 @@
+header.header 
+	.section_in 
+		.header_main
+			.header_logo_w
+				a(href="#")
+					.header_logo
+						img(src="i/logo.png", alt="")
+					p ТЕТРАИНЖИНИРИНГ
+			nav.header_nav
+				.header_nav_toggle.trigger(data-target="burger")
+					span 
+					span 
+					span 
+				ul.header_nav_list 
+					each item, i in ['Услуги', 'Оборудование', 'Галерея', 'Контакты']
+						if i === 0
+							li 
+								a(href="#")=item
+								ul.header_nav_sublist 	
+									each item in ['Подбор, монтаж и ввод оборудования в эксплуатацию', 'Перенос оборудования', 'Восстановление оборудования', 'Плановый и аварийный ремонт']
+										li 
+											a(href="#")=item  
+						else 
+							li 
+								a(href="#")=item  

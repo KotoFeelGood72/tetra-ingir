@@ -1,0 +1,140 @@
+.footer {
+	width: 100%;
+	min-height: $footer;
+	flex: 0 0 auto;
+	will-change: transform;
+	position: relative;
+	background-color: $d-blue;
+	padding: 5rem 0;
+	@include bp($point_4) {
+		padding: 2rem 0;
+	}
+	* {
+		color: $white;
+	}
+}
+
+.footer {
+}
+.section_in {
+}
+.footer_main {
+	@include flex-space;
+	align-items: flex-start;
+	@include bp($point_2) {
+		flex-direction: column;
+	}
+	@include bp($point_4) {
+		padding: 4rem 0;
+	}
+}
+.footer_col_left {
+	margin-right: 12rem;
+	@include bp($point_2) {
+		margin: 0;
+	}
+	@include bp($point_4) {
+		order: 2;
+	}
+	.header_logo_w {
+		margin-bottom: 4.6rem;
+		@include bp($point_4) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+.header_logo_w {
+}
+.header_logo {
+}
+.footer_colRight_info {
+	p {
+		margin-bottom: 1.4rem;
+		@include bp($point_4) {
+			font-size: 1.2rem;
+			margin-bottom: 1rem;
+		}
+	}
+	&>a {
+		text-decoration: underline;
+		margin-bottom: 4.5rem;	
+		display: block;
+		@include bp($point_4) {
+			font-size: 1.2rem;
+			margin-bottom: 3rem;
+		}
+	}
+}
+.arkada_link {
+	max-width: 18.8rem;
+}
+.footer_col_nav {
+}
+.footer_nav {
+}
+.footer_nav_list {
+	@include flex-start;
+	align-items: flex-start;
+	position: relative;
+	@include bp($point_4) {
+		flex-direction: column;
+		margin-bottom: 5rem;
+	}
+	&:before {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: .2rem;
+		border-bottom: .2rem solid $l-blue;
+		top: 3.5rem;
+		pointer-events: none;
+		@include bp($point_4) {
+			display: none;
+		}
+	}
+	&>li {
+		&>a {
+			font-family: $font_2;
+			font-weight: 700;
+			display: block;
+			padding-bottom: 1.4rem;
+			transition: all .3s ease;
+			@include bp($point_4) {
+				padding-bottom: 0;
+			}
+			&:hover {
+				opacity: .7;
+			}
+		}
+		&:not(:last-child) {
+			margin-right: 7rem;
+			@include bp($point_4) {
+				margin: 0 0 2rem 0;
+			}
+		}
+	}
+}
+.footer_nav_sublist {
+	margin-top: 2.4rem;
+	@include bp($point_4) {
+		margin: 1rem 0 0 1.5rem;
+	}
+
+	li {
+		a {
+			font-size: 1.4rem;
+			text-decoration: underline;
+			max-width: 22.7rem;
+			display: block;
+			@include bp($point_4) {
+				font-size: 1.2rem;
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: 2.4rem;
+			@include bp($point_4) {
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+}

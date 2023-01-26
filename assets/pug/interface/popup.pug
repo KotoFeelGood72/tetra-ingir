@@ -1,0 +1,146 @@
+.popup.popup_order(data-id="orders") 
+	.popup_bg.remove 
+	.popup_main.popup_order_main 
+		.popup_close.remove 
+			+icon('close')
+		h3 Для заказа заполните форму
+		.popup_order_w 
+			form.popup_orders(action="")
+				+input({
+					place: 'Имя',
+					var: 'popup'
+				}) 
+				+input({
+					place: 'Ваш номер телефона',
+					type: 'tel',
+					var: 'popup'
+				})
+				.app_policy!='Отправляя форму вы соглашаетесь на обработку своих персональных данных и принимаете <a href="/" target="_blank">Политику Конфиденциальности</a>'
+				+input({
+					val: 'Отправить',
+					submit: true,
+					var: 'popup_btn'
+				})
+
+.popup.popup_form(data-id="forms")
+	.popup_bg.remove 
+	.popup_main.popup_form_main 
+		.popup_close.remove 
+			+icon('close')
+		h3 Оставьте ваши контакты и мы свяжемся с вами:
+		.popup_form_w 
+			form.popup_forms(action="")
+				+input({
+					place: 'Ваш номер телефона',
+					type: 'tel',
+					var: 'popup'
+				})
+				+input({
+					place: 'ФИО',
+					var: 'popup'
+				}) 
+				+input({
+					place: 'Компания, где вы работаете',
+					var: 'popup'
+				}) 
+				+input({
+					place: 'Ваша должность',
+					var: 'popup'
+				}) 
+				.app_policy!='Отправляя форму вы соглашаетесь на обработку своих персональных данных и принимаете <a href="/" target="_blank">Политику Конфиденциальности</a>'
+				+input({
+					val: 'Отправить',
+					submit: true,
+					var: 'popup_btn'
+				})
+
+
+.popup.popup_service(data-id="service") 
+		.popup_bg.remove 
+		.popup_main.popup_services 
+			.popup_close.remove 
+				+icon('close')
+			.popup_slider_w 
+				.popup_slider.swiper 
+					.swiper-wrapper
+						-for(i = 0; i < 6; i++) 
+							.swiper-slide 
+								img(src="i/gallery.jpg", alt="")
+				.popup_slider_nav 
+					.popup_prev.popup_btn_nav 
+						+icon('prev')
+					.popup_next.popup_btn_nav 
+						+icon('next')
+			.popup_service_content 
+				h3 Стерилизатор трубчатый для жидких пищевых продуктов Тетра Пак Base Drink 5000
+				ul 
+					li 
+						p Производительность:
+						span до 5000 л/ч
+					li 
+						p Год выпуска:
+						span 1998
+				+btn({
+					name: 'Заказать',
+					class: 'service_order trigger',
+					target: 'orders',
+					link: true,
+				})
+
+
+.burger(data-id="burger") 
+	.burger_bg.remove 
+	.burger_main 
+		.burger_close.remove 
+			+icon('close')
+		.header_logo_w
+			a(href="#")
+				.header_logo
+					img(src="i/logo.png", alt="")
+				p ТЕТРАИНЖИНИРИНГ
+		nav.burger_nav 
+				ul.burger_nav_list 
+					each item, i in ['Услуги', 'Оборудование', 'Галерея', 'Контакты']
+						if i === 0
+							li 
+								a(href="#")=item
+								ul.header_nav_sublist 	
+									each item in ['Подбор, монтаж и ввод оборудования в эксплуатацию', 'Перенос оборудования', 'Восстановление оборудования', 'Плановый и аварийный ремонт']
+										li 
+											a(href="#")=item  
+						else 
+							li 
+								a(href="#")=item 
+		ul.contacts_info
+			-
+				let info = [
+					{
+						title: 'Краснодарский край, ст. Северская',
+						icon: 'map'
+					},
+					{
+						link: ['+7 918 442-45-19', '+7 928 282-64-55'],
+						icon: 'tel'
+					},
+					{
+						link: ['alex_1510@inbox.ru', 'tetra.inginiring@gmail.com'],
+						icon: 'mail'
+					},
+				]
+			each item in info 
+				li.contact_item 
+					.contact_item_icon 
+						+icon(item.icon)
+					if item.title
+						.contact_item_title
+							p=item.title 
+					else if item.link
+						ul 
+							each items in item.link
+								li
+									a(href="#")=items
+		ul.contacts_social 
+			each item in ['facebook', 'twitter', 'instagram']
+				li 
+					a(href="#")
+						+icon(item)

@@ -1,0 +1,9 @@
+extends _layout
+
+block vars
+	- array = {body_class:'mod_blue', layout_mod:'', sub_keywords:'', title_inner:'ТЕТРАИНЖИНИРИНГ - Контакты'}
+block content_block
+	+breadcrumb(['Главная'], 'Контакты')
+	+contacts({
+		mode: 'default'
+	})

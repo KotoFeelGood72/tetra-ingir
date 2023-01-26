@@ -1,0 +1,55 @@
+.globalContacts {
+	&.default {
+		margin-bottom: 10rem;
+		.contacts_social {
+			a {
+				color: $n-gray !important;
+				transition: all .3s ease;
+				&:hover {
+					color: $l-blue!important;
+				}
+			}
+		}
+
+		background-color: $white;
+
+		.contacts_map {
+			position: static;
+		}
+
+		.globalContacts_info {
+			margin-right: 15.1rem;
+			@include bp($point_2) {
+				margin-right: 4rem;
+			}
+		}
+
+		.contact_item {
+			color: $dark;
+			font-family: $font_2;
+			font-weight: 700;
+
+			a {
+				color: inherit;
+				transition: all .3s ease;
+				&:hover {
+					color: $l-blue;
+				}
+			}
+		}
+
+		.globalContacts_main {
+			align-items: flex-start;
+
+
+
+			@include bp($point_4) {
+				padding: 0;
+			}
+		}
+
+		.contact_item_icon {
+			color: $l-blue;
+		}
+	}
+}

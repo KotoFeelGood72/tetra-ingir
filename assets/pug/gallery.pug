@@ -1,0 +1,31 @@
+extends _layout
+
+block vars
+	- array = {body_class:'mod_blue', layout_mod:'', sub_keywords:'', title_inner:'ТЕТРАИНЖИНИРИНГ - Галерея'}
+block content_block
+	+breadcrumb(['Главная'], 'Галерея')
+	section.gallery 
+		.section_in 
+			.gallery_main
+				.gallery_slider_w 
+					.gallery_slider.swiper 
+						.swiper-wrapper
+							-for(i = 0; i < 10; i++) 
+								.swiper-slide 
+									.gallery_slide 
+										img(src="i/gallery.jpg", alt="")
+					.gallery_slider_nav 
+						.gallery_nav_btn.prev 
+							+icon('prev')
+						.gallery_nav_btn.next 
+							+icon('next')
+				.gallery_thumb.swiper 
+					.swiper-wrapper
+						-for(i = 0; i < 10; i++)
+							.swiper-slide 
+								.gallery_thumbail
+									img(src="i/gallery.jpg", alt="")
+	+contacts({
+		title: true,
+		mode: 'grey'
+	})
